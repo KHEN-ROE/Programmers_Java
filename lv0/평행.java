@@ -1,4 +1,4 @@
-package lv0;
+package Programmers_Java.lv0;
 
 public class 평행 { //틀림... 기울기를 구해야함
 
