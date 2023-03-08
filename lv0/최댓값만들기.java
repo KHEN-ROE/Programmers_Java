@@ -1,5 +1,7 @@
 package Programmers_Java.lv0;
 
+import java.util.Arrays;
+
 public class 최댓값만들기 {
 
 	public static void main(String[] args) {
@@ -31,6 +33,10 @@ public class 최댓값만들기 {
         System.out.println(secmax);        
         System.out.println(answer);
 
+        //아주 간단한 방법	
+        Arrays.sort(numbers);
+        int answer1 = numbers[numbers.length-1] * numbers[numbers.length-2];
+        System.out.println(answer1);
 
 	}
 
