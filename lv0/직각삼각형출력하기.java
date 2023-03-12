@@ -14,9 +14,9 @@ public class 직각삼각형출력하기 {
         String str="";
         int a=n;
         
-        for(int i=n-1; i>=0; i--) {
+        for(int i=n-1; i>=0; i--) { //맨처음에 * 하나만 찍어야 하므로 i가 n-1부터 시작
         	if(a==n) {
-        		str = s.repeat(n-i);	
+        		str = s.repeat(n-i); // 맨 첨에 하나만 찍는다
         		System.out.print(str);
         	}
         	System.out.println();	
