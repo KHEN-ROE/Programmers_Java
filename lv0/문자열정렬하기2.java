@@ -5,23 +5,25 @@ import java.util.Arrays;
 public class 문자열정렬하기2 {
 
 	public static void main(String[] args) {
-		String my_string = "Caad";
+		String my_string = "Bcad";
 		String answer = "";
-		String str [] = new String[answer.length()];
-		String alpha = "abcdefghijkelmopqurtuvwxyz";
+		String s = "";
 		
-		String str2[] = new String[alpha.length()];
+		s = my_string.toLowerCase();
+		String [] str = s.split("");
+		Arrays.sort(str);
 		
-		answer = my_string.toLowerCase();
-		str = answer.split("");
+		for(int i=0; i<str.length; i++) {
+			answer += str[i];
+		}
+		System.out.println(answer);
+				
 		
-		String answer1="";
 		
 		
-//		for(int i=0; i<str.length; i++) {
-//			System.out.println(str[i]);
-//		}
-
+		
+		
+		
 	}
 
 }
