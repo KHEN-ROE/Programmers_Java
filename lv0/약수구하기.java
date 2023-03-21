@@ -1,31 +1,15 @@
 package Programmers_Java.lv0;
 
-<<<<<<< HEAD
-=======
+
 import java.util.ArrayList;
 import java.util.List;
 
->>>>>>> 75dee5f6e659a8588c5b89ae02aebe967e0b71b1
+
 public class 약수구하기 {
 
 	public static void main(String[] args) {
 		int n = 24;
-<<<<<<< HEAD
-		int[] answer = new int[n];
-		int index=0;
-		
-		for(int i=1; i<answer.length+1; i++) {
-			if (n % i == 0) {
-				answer[index] = i;
-				index++;
-			}
-		}
-		for(int a : answer) {
-			System.out.println(a);
-		}
-		
-		
-=======
+
 		
 		int index =0;
 		int count = 0;
@@ -62,7 +46,7 @@ public class 약수구하기 {
 		for(int a : arr) {
 			System.out.println(a);
 		}
->>>>>>> 75dee5f6e659a8588c5b89ae02aebe967e0b71b1
+
 
 	}
 

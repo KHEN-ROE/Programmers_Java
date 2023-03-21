@@ -7,20 +7,20 @@ public class 문자열정렬하기2 {
 	public static void main(String[] args) {
 		String my_string = "Caad";
 		String answer = "";
-		String str [] = new String[answer.length()];
-		String alpha = "abcdefghijkelmopqurtuvwxyz";
-		
-		String str2[] = new String[alpha.length()];
-		
 		answer = my_string.toLowerCase();
-		str = answer.split("");
+		String str [] = answer.split("");
 		
-		String answer1="";
+		String alpha = "abcdefghijkelmopqurtuvwxyz";
+		String str2[] = alpha.split("");
 		
-		
-//		for(int i=0; i<str.length; i++) {
-//			System.out.println(str[i]);
-//		}
+		for(int i=0; i<str.length; i++) {
+			for(int j=0; j<str2.length; j++) {
+				if(str[i].compareTo(str2[j]) >= 0) {
+					answer += str[i];
+					System.out.println(answer);
+				}
+			}
+		}
 
 	}
 
