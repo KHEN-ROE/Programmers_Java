@@ -31,7 +31,7 @@ public class 숨어있는숫자의덧셈2 {
 //		System.out.println(answer);
 		
 		int answer = 0;
-		String[] parts = my_string.split("[^\\d]+"); // split string by non-digits
+		String[] parts = my_string.split("[^\\d]+"); // split string by non-digits. 정규표현식
 		for (String part : parts) {
 			if (!part.isEmpty()) {
 				int num = Integer.parseInt(part);
