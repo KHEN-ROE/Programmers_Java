@@ -8,28 +8,23 @@ public class 잘라서배열로저장하기 {
 	public static void main(String[] args) {
 		String my_str = "abc1Addfggg4556b";
 		int n = 6;
-		//정답을 담을 배열
-		String []str1 = new String[(my_str.length()/n) + 1];
+
+		List<String> list = new ArrayList<String>();
+
+	
 		
-		
-		String[]str = my_str.split("");
-		String []str2 = new String[str.length+10]; // 나중에 list로 바꿀 것
-		String[] answer = {};
-		String s="";
-		
-		List<String> list = new ArrayList<>();
-		
-		for(int i=0; i<n; i++) {
-				s+=str[i];
-				str[i] = str[i].replaceAll(str[i], "");
+		for(int i=0; i<my_str.length(); i+=n) {
+			if(my_str.length()-i < n) {
+				list.add(my_str.substring(i));
+				break;
+			}
+			list.add(my_str.substring(i, n+i));
 		}
 		
-		list.add(s);
+		//리스트를 배열로 변환
 		
-		
-		for(int i=0; i<(my_str.length()/n) + 1; i++) {
-			
-		}
+		String answer[] = list.toArray(new String[list.size()]);
+//		String[] arr = list.toArray(new String[0]); 이렇게 해도 됨
 		
 
 	}
