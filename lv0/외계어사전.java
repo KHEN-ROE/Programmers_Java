@@ -28,7 +28,7 @@ public class 외계어사전 {
 				s = dic[i]; //문자열에 일단 단어 저장
 				str = s.split(""); // 잘라서 배열에 넣고
 				Arrays.sort(str); // 정렬
-				//하나의 단어로 만들어야 함.
+				//하나의 문자열로 만들어야 함.
 				for(int j=0; j<str.length; j++) {
 					s1 += str[j];
 				}
