@@ -6,7 +6,7 @@ public class 문자열계산하기 {
 		// 연산자는 여러개일 수 있다
 		// 공백을 기준으로 자른다
 		
-		String my_string = "10 + 20 + 10";
+		String my_string = "10 + 20 + 10 + 10";
 		int answer = 0;
 //		String[]str = my_string.split("[^\\d]+");
 		String[]str1 = my_string.split(" ");
@@ -28,6 +28,7 @@ public class 문자열계산하기 {
 			} // 빼기 연산은 내일 구현
 			if(str1[i].equals("-")) {
 				answer = Integer.parseInt(str1[i-1]) - answer - Integer.parseInt(str1[i+1]);
+				
 			}
 		}
 		
