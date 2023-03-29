@@ -24,7 +24,7 @@ public class 등수매기기 {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr1.length; j++) {
                 if(arr[i] == arr1[j]){
-                    arr1[j] = arr[i].indexOf();
+                    arr1[j] = arr[i].indexOf(); // 안되는 듯.
                 }
             }
         }
