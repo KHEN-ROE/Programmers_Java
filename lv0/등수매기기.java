@@ -5,45 +5,31 @@ import java.util.Collections;
 
 public class 등수매기기 {
     public static void main(String[] args) {
-        int[][] score = {{80, 70}, {90, 50}, {40, 70}, {50, 80}};
-        int[]answer = new int[score.length];
+        int[][] score = {{1, 3}, {3, 1}, {2, 3}, {3, 2}, {1, 2}, {0, 0}};
         int[]arr = new int[score.length];
-        int max = 0;
-        int min = 201;
-        int rank = 0;
 
         //점수의 합계
         for(int i = 0; i < score.length; i++){
             arr[i] = score[i][0] + score[i][1];
         }
-
+        //arr에 점수의 합계 저장된 상태다. arr이 원본임
+        
         //원본 배열과 정렬된 배열을 비교할 예정
-        int arr1[] = arr.clone(); // 원본 배열 복제
-        Arrays.sort(arr, Collections.reverseOrder()); // 원본 배열을 내림차순으로 정렬
-
+        Integer[] arr2 = Arrays.stream(arr).boxed().toArray(Integer[]::new);
+        Arrays.sort(arr2, Collections.reverseOrder());
+        //arr2는 내림차순으로 정렬된 배열
+        
+        //원본 배열과 내림차순 정렬된 배열의 원소가 같으면 내림차순 정렬된 배열의 인덱스를 원본 배열의 원소에 대입
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr1.length; j++) {
-                if(arr[i] == arr1[j]){
-                    arr1[j] = arr[i].indexOf(); // 안되는 듯.
+            for (int j = 0; j < arr2.length; j++) {
+                if(arr[i] == arr2[j]){
+                    arr[i] = (Arrays.asList(arr2).indexOf(arr2[j]))+1;
+                    break;
                 }
             }
         }
-
-
-        //일단 최대값을 구해본다
-        for(int i = 0; i < arr.length; i++){
-            if(arr[i] > max) {
-                max = arr[i];
-                answer[i] = max;
-                answer[i] = 1;
-            }
-        }
-        System.out.println(max + "," + min);
-
-        for (int i = 0; i < arr.length; i++) {
-            if(arr[i] < max){
-
-            }
+        for(int a : arr){
+            System.out.println("index : " +     a);
         }
 
     }
