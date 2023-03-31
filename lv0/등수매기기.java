@@ -29,7 +29,7 @@ public class 등수매기기 {
             }
         }
         for(int a : arr){
-            System.out.println("index : " + a);
+            System.out.println("index : " +     a);
         }
 
     }
