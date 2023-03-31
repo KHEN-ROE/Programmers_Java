@@ -21,7 +21,7 @@ public class 특이한정렬 {
                 if(Math.abs(numlist[i]-n) == arr[j]) {
                     if( j != arr.length-1){
                         if(arr[j]==arr[j+1]){
-                            answer[j] = numlist[i+n];
+                            answer[j] = numlist[i+n]; // numlist[i] -n 값이 중복될 때 ?
                             break;
                         }else {
                             answer[j] = numlist[i];
@@ -31,9 +31,6 @@ public class 특이한정렬 {
                     else {
                         answer[j] = numlist[i];
                     }
-
-
-
                 }
             }
         }
