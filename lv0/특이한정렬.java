@@ -1,46 +1,47 @@
 package Programmers_Java.lv0;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class 특이한정렬 {
     public static void main(String[] args) {
 //        int[] numlist = {600, 400, 300, 200, 700, 800, 100, 900};
 //        int n = 500;
-        int[] numlist = {10,9,8,7,6,5,4,3,2,1,11};
-        int n = 6;
-
-        int answer[] = new int[numlist.length];
-        int arr[] = new int[numlist.length];
-        for (int i = 0; i < numlist.length; i++) {
-            arr[i] = Math.abs(numlist[i] - n);
-        }
-
-        Arrays.sort(arr);
-        //arr은 numlist[i]에서 n뺀 배열
-
-        int index = 1;
-        for (int i = 0; i < numlist.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if(Math.abs(numlist[i]-n) == arr[j]) {
-                    if( j != arr.length-1){
-                        if(arr[j]==arr[j+1]){
-                            answer[j+1] = answer[j];
-                            answer[j] = numlist[i];
-                            break;
-                        }else {
-                            answer[j] = numlist[i];
-                            break;
-                        }
-                    }
-                    else {
-                        answer[j] = numlist[i];
-                    }
-                }
-            }
-        }
-        for(int a : answer){
-            System.out.print(" "+a);
-        }
+//        int[] numlist = {10,9,8,7,6,5,4,3,2,1,11};
+//        int n = 6;
+//
+//        int answer[] = new int[numlist.length];
+//        int arr[] = new int[numlist.length];
+//        for (int i = 0; i < numlist.length; i++) {
+//            arr[i] = Math.abs(numlist[i] - n);
+//        }
+//
+//        Arrays.sort(arr);
+//        //arr은 numlist[i]에서 n뺀 배열
+//
+//        int index = 1;
+//        for (int i = 0; i < numlist.length; i++) {
+//            for (int j = 0; j < arr.length; j++) {
+//                if(Math.abs(numlist[i]-n) == arr[j]) {
+//                    if( j != arr.length-1){
+//                        if(arr[j]==arr[j+1]){
+//                            answer[j+1] = answer[j];
+//                            answer[j] = numlist[i];
+//                            break;
+//                        }else {
+//                            answer[j] = numlist[i];
+//                            break;
+//                        }
+//                    }
+//                    else {
+//                        answer[j] = numlist[i];
+//                    }
+//                }
+//            }
+//        }
+//        for(int a : answer){
+//            System.out.print(" "+a);
+//        }
 
 //        int[] numlist = {10000,20,36,47,40,6,10,7000};
 //        int n = 30;
@@ -109,7 +110,46 @@ public class 특이한정렬 {
 //            if(answer[answer.length - 1] != null) break;
 //        }
 
-        //문자열
+        int[] numlist = {10,9,8,7,6,5,4,3,2,1,11};
+        int n = 6;
+
+        //Arrays.sort()가 object타입 배열을 정렬한다네?
+        Integer[] numlistObj = new Integer[numlist.length];
+        for (int i = 0; i < numlist.length; i++) {
+            numlistObj[i] = numlist[i];
+        }
+
+        //numlist - n 을 내림차순으로 정렬?
+        //익명클래스 사용
+        //뭔가했더니 TimSort 인터페이스 사용
+        //compare 메서드는 비교 중인 두 객체의 순서를 나타내는 정수를 반환.
+        //즉, n과 o1 사이 및 n과 o2 사이의 절대값 차이가 같으면 메서드가 숫자 값을 기준으로 개체를 정렬
+        //n과 o1 사이의 절대 차이가 n과 o2 사이의 절대 차이보다 작으면 정렬된 배열에서 o1이 o2 앞에 와야 함.
+        // 반대로 n과 o1의 절대 차이가 n과 o2의 절대 차이보다 크면 정렬된 배열에서 o2가 o1 앞에 와야 함
+        Arrays.sort(numlistObj, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                int diff1 = Math.abs(o1 - n);
+                int diff2 = Math.abs(o2 - n);
+
+                if (diff1 == diff2) {//0을 리턴하니 가운데 있던 5가 앞 부분의 가운데로 들어오네
+                    return o2 - o1; //0과 1을 리턴하는데 그 의미를 생각해보라. 1을 리턴하니, 절반을 나눠서 앞부분을 오름차순으로 정렬하네
+                } else {
+                    return diff1 - diff2; 
+                }
+            }
+        });
+
+        int[] answer = new int[numlist.length];
+        for (int i = 0; i < numlist.length; i++) {
+            answer[i] = numlistObj[i];
+        }
+
+        for(int a : answer){
+            System.out.print(" "+a);
+        }
+
+
 
     }
 
