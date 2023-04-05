@@ -6,7 +6,7 @@ public class x만큼간격이있는n개의숫자 {
         int n = 2;
         int index = 0;
         long[] answer = new long[n];
-        for(int i = x; i <= Math.abs(n*x); i+=x){
+        for(long i = x; i <= Math.abs(n*x); i+=x){
             answer[index] = (long)i;
             index++;
             if (index == n) {
