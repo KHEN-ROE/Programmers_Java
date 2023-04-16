@@ -11,7 +11,7 @@ public class 약수의개수와덧셈 {
                 if (i % j == 0) {
                     cnt++;
                 }
-            }
+            }//
             if (cnt % 2 == 0) {
                 answer += i;
                 cnt = 0;
