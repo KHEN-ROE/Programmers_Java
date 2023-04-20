@@ -36,15 +36,7 @@ public class 이상한문자만들기 {
                 answer += " ";
             }
         }
-<<<<<<< HEAD
-        System.out.println(answer); //
-    }
-
-}
-=======
         System.out.println(answer);
     }
 
 }
-
->>>>>>> origin/main
