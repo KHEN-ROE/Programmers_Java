@@ -32,7 +32,7 @@ public class 숫자문자열과영단어 {
         String[] str = s.split("");
         String temp = "";
 
-        // 숫자를 포함하는 지 확인하는 정규식
+        // 숫자를 포함하는 지 확인하는 정규식 - 이걸 그냥 isDigit 함수 써도 됨
         String pattern = "^[0-9]*$";
 
         List<Integer> list = new ArrayList<>();
@@ -77,7 +77,8 @@ public class 숫자문자열과영단어 {
 //                {"9", "nine"}};
 //
 //        for (String[] map : mapArr) {
-//            s = s.replace(map[1], map[0]);
+//            s = s.replace(map[1], map[0]); // String은 불변인데 이게 어떻게 가능?
+                                            // 이것은 변화시키는 것이 아니라 새로운 String 객체를 만들고 거기에 s를 할당하는 것임
 //        }
 //
 //        int answer = Integer.parseInt(s);
